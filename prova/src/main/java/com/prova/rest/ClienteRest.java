@@ -74,7 +74,7 @@ public class ClienteRest {
 		return ResponseEntity.ok().body(list);
 	}
 	
-	@GetMapping(value = "{id}")
+	@GetMapping(value = "/buscarid/{id}")
 	public Cliente acharPorId(@PathVariable Long id) {
 		return repository.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
 	}
